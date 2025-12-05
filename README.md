@@ -95,4 +95,4 @@ This project is intended for educational and productivity purposes. Always revie
 
 ---
 
-**Created by [Sampath04-Isiam](https://github.com/Sampath04-Isiam)**
+**Created by [Srinivas](https://github.com/srinivas-pullela/Email_Reply_Generator)**

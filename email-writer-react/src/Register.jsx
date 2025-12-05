@@ -28,12 +28,16 @@ function Register() {
         formData
       );
 
-      setMessage("Registration Successful!");
-      console.log(response.data);
+      if (response.data === "SUCCESS") {
+        setMessage("SUCCESS");
+      }
 
     } catch (error) {
-      console.error(error);
-      setMessage("Registration Failed!");
+      if (error.response && error.response.status === 409) {
+        setMessage("EXISTS"); // USER_EXISTS
+      } else {
+        setMessage("FAILED");
+      }
     }
   };
 
@@ -85,21 +89,41 @@ function Register() {
           </button>
         </form>
 
-        {/* Message + Login Link */}
-        {message && (
+        {/* SUCCESS Message */}
+        {message === "SUCCESS" && (
           <div className="mt-4 text-center">
-            <p className="text-green-600 font-medium">{message}</p>
+            <p className="text-green-600 font-medium">Registration Successful!</p>
 
-            {/* Only show Login link if registration is successful */}
-            {message === "Registration Successful!" && (
-              <button
-                onClick={() => navigate("/login")}
-                className="mt-2 text-blue-600 underline hover:text-blue-800 transition"
-              >
-                Click here to Login
-              </button>
-            )}
+            <button
+              onClick={() => navigate("/login")}
+              className="mt-2 text-blue-600 underline hover:text-blue-800 transition"
+            >
+              Click here to Login
+            </button>
           </div>
+        )}
+
+        {/* USER EXISTS Message + Login Link */}
+        {message === "EXISTS" && (
+          <div className="mt-4 text-center">
+            <p className="text-red-600 font-medium">
+              User already exists! Please login.
+            </p>
+
+            <button
+              onClick={() => navigate("/login")}
+              className="mt-2 text-blue-600 underline hover:text-blue-800 transition"
+            >
+              Click here to Login
+            </button>
+          </div>
+        )}
+
+        {/* FAILED Message */}
+        {message === "FAILED" && (
+          <p className="mt-4 text-center text-red-600 font-medium">
+            Registration Failed! Try again.
+          </p>
         )}
       </div>
     </div>

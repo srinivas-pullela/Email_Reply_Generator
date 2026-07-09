@@ -209,24 +209,6 @@ Smart-Email-Assistant/
 ✉️ AI Generated Reply
 ```
 
----
-
-# 📸 Screenshots
-
-> Replace these placeholders with your project screenshots.
-
-| Screenshot                | Status            |
-| ------------------------- | ----------------- |
-| 🏠 Home Page              | 📷 Add Screenshot |
-| ⚛️ React UI               | 📷 Add Screenshot |
-| 🤖 AI Generated Reply     | 📷 Add Screenshot |
-| 📧 Gmail Integration      | 📷 Add Screenshot |
-| 🧩 Chrome Extension Popup | 📷 Add Screenshot |
-| ✨ AI Reply Button         | 📷 Add Screenshot |
-| 📬 Generated Response     | 📷 Add Screenshot |
-
----
-
 # ⚙️ Installation
 
 ## ☕ Backend
